@@ -23,7 +23,7 @@ drawAllStar()
 
 function drawAllStar() {
   // 如果不定义函数，而直接把for放在外面，会造成后面x值的污染
-  for(var i=0;i<200;i++) {
+  for(var i=0;i<150;i++) {
     // 5~10
     var R = Math.random()*4+4
     var x = Math.random()*canvas.width
