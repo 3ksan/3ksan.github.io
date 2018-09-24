@@ -4,7 +4,7 @@ canvas.width = document.documentElement.clientWidth;
 canvas.height = document.documentElement.clientHeight;
 
 var w = canvas.width/14
-var R = w/20
+var R = 4
 
 var context = canvas.getContext('2d')
 
