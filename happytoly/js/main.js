@@ -42,13 +42,20 @@ function drawStar (ctx,R,r,x,y,rot) {
 draw()
 
 function draw() {
-  var x= 50,y=canvas.height*2/5
-  var num = 7
+  var x = canvas.width/5
+  var y = canvas.height*1/5
+  var num = 4
   for(var k = 0;k<num;k++) {
     drawWord(x,y,k,context)
       x+=250
   }
+  x = canvas.width/5
+  y = canvas.height*3/5
 
+  for(var k = 4;k<8;k++) {
+    drawWord(x,y,k,context)
+      x+=250
+  }
 }
 
 
@@ -61,7 +68,7 @@ function  drawWord(x,y,k,ctx){
                 ctx.beginPath();
                 ctx.fillStyle = "#FFFF00"
                 // ctx.fillStyle = "#FFD740"
-                
+
                 ctx.arc(x+j*2*(R+1)+R+1,y+i*2*(R+1)+R+1, R,0,2*Math.PI);
                 ctx.closePath();
                 ctx.fill();
