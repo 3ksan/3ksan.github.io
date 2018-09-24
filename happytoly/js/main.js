@@ -10,11 +10,6 @@ var context = canvas.getContext('2d')
 canvas.width = window.innerWidth ;
 canvas.height = window.innerHeight ;
 
-// window.onload=function(){
-
-//   canvas.width = document.body.clientWidth;
-//   canvas.height = document.body.clientHeight;
-// }
 
 var w = canvas.width/14
 var R = 4
@@ -59,14 +54,14 @@ draw()
 
 function draw() {
   var x = w
-  var y = canvas.height*1/5
+  var y = canvas.height*1/3
   var num = 4
   for(var k = 0;k<num;k++) {
     drawWord(x,y,k,context)
       x+=canvas.width*3/14
   }
   x = w
-  y = canvas.height*3/5
+  y = canvas.height*2/3
 
   for(var k = 4;k<8;k++) {
     drawWord(x,y,k,context)
