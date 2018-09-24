@@ -1,10 +1,10 @@
 var canvas = document.getElementById('canvas')
-var WIDTH,HEIGHT
-
-var R = 8
 
 canvas.width = document.documentElement.clientWidth;
 canvas.height = document.documentElement.clientHeight;
+
+var w = canvas.width/14
+var R = w/20
 
 var context = canvas.getContext('2d')
 
@@ -13,7 +13,7 @@ context.fillStyle = '#191970'
 context.fillRect(0,0,canvas.width,canvas.height)
 
 
-for(var i=0;i<100;i++) {
+for(var i=0;i<200;i++) {
   // 5~10
   var R = Math.random()*4+4
   var x = Math.random()*canvas.width
@@ -42,19 +42,19 @@ function drawStar (ctx,R,r,x,y,rot) {
 draw()
 
 function draw() {
-  var x = canvas.width/5
+  var x = w
   var y = canvas.height*1/5
   var num = 4
   for(var k = 0;k<num;k++) {
     drawWord(x,y,k,context)
-      x+=250
+      x+=canvas.width*3/14
   }
-  x = canvas.width/5
+  x = w
   y = canvas.height*3/5
 
   for(var k = 4;k<8;k++) {
     drawWord(x,y,k,context)
-      x+=250
+      x+=canvas.width*3/14
   }
 }
 
@@ -68,7 +68,6 @@ function  drawWord(x,y,k,ctx){
                 ctx.beginPath();
                 ctx.fillStyle = "#FFFF00"
                 // ctx.fillStyle = "#FFD740"
-
                 ctx.arc(x+j*2*(R+1)+R+1,y+i*2*(R+1)+R+1, R,0,2*Math.PI);
                 ctx.closePath();
                 ctx.fill();
@@ -76,9 +75,6 @@ function  drawWord(x,y,k,ctx){
         }
     }
 }
-
-
-// 中秋快乐
 
 
 
