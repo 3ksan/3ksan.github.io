@@ -1,25 +1,41 @@
-var canvas = document.getElementById('canvas')
 
-canvas.width = document.documentElement.clientWidth;
-canvas.height = document.documentElement.clientHeight;
+// canvas.width = document.documentElement.clientWidth;
+// canvas.height = document.documentElement.clientHeight;
+
+var canvas = document.getElementById('canvas')
+var context = canvas.getContext('2d')
+
+// canvas.width =document.body.clientWidth;
+// canvas.height = document.body.clientHeight;
+canvas.width = window.innerWidth ;
+canvas.height = window.innerHeight ;
+
+// window.onload=function(){
+
+//   canvas.width = document.body.clientWidth;
+//   canvas.height = document.body.clientHeight;
+// }
 
 var w = canvas.width/14
 var R = 4
-
-var context = canvas.getContext('2d')
 
 context.fillStyle = '#191970'
 // context.fillStyle = '#1A237E'
 context.fillRect(0,0,canvas.width,canvas.height)
 
 
-for(var i=0;i<200;i++) {
-  // 5~10
-  var R = Math.random()*4+4
-  var x = Math.random()*canvas.width
-  var y = Math.random()*canvas.height
-  var rot = Math.random()*360
-  drawStar(context, R , R/2.0 , x , y, rot)
+drawAllStar()
+
+function drawAllStar() {
+  // 如果不定义函数，而直接把for放在外面，会造成后面x值的污染
+  for(var i=0;i<200;i++) {
+    // 5~10
+    var R = Math.random()*4+4
+    var x = Math.random()*canvas.width
+    var y = Math.random()*canvas.height
+    var rot = Math.random()*360
+    drawStar(context, R , R/2.0 , x , y, rot)
+  }
 }
 
 
@@ -38,8 +54,8 @@ function drawStar (ctx,R,r,x,y,rot) {
   ctx.stroke()
 }
 
-
 draw()
+
 
 function draw() {
   var x = w
