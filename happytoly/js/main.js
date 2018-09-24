@@ -54,14 +54,14 @@ draw()
 
 function draw() {
   var x = w
-  var y = canvas.height*1/3
+  var y = canvas.height*1/5
   var num = 4
   for(var k = 0;k<num;k++) {
     drawWord(x,y,k,context)
       x+=canvas.width*3/14
   }
   x = w
-  y = canvas.height*2/3
+  y = canvas.height*3/5
 
   for(var k = 4;k<8;k++) {
     drawWord(x,y,k,context)
